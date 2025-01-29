@@ -14,6 +14,7 @@ body {
 }
 nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     background-color: rgba(51, 51, 51, 0.5); 
@@ -46,15 +47,25 @@ nav .logo img {
     margin-right: 20px;
 }
 
-#img1 {
-    width: 300px;
-    height: 300px; 
+div[class^="img"] {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 90%;
+    position: relative;
+}
+
+div[class^="img"] img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     border-radius: 50%;
     border: 10px solid white;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    margin: 0 auto;
 }
 
-#img1:hover {
+div[class^="img"] img:hover {
     background-color: #e64a19;
     transform: scale(1.05);
     animation: bounce 0.5s;
@@ -69,131 +80,37 @@ nav .logo img {
     }
 }
 
-#img2 {
-    width: 300px;
-    height: 300px; 
-    border-radius: 50%;
-    border: 10px solid white;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+h1 {
+    font-size: 2vw;
+    text-align: center;
 }
 
-#img2:hover {
-    background-color: #e64a19;
-    transform: scale(1.05);
-    animation: bounce 0.5s;
-}
-.img3{
-    position: absolute;
-    left: 600px;
-    top: 140px;
-
-
-}
-
-#img3 {
-    width: 300px;
-    height: 300px; 
-    border-radius: 50%;
-    border: 10px solid white;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    position: absolute;
+@media (max-width: 768px) {
+    h1 {
+        font-size: 4vw;
+    }
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    div[class^="img"] {
+        max-width: 100%;
+    }
 }
 
-#img3:hover {
-    background-color: #e64a19;
-    transform: scale(1.05);
-    animation: bounce 0.5s;
-}
-
-
-.img4{
-    position: absolute;
-    left: 600px;
-    top: 550px;
-
-
-}
-
-#img4 {
-    width: 300px;
-    height: 300px; 
-    border-radius: 50%;
-    border: 10px solid white;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    position: absolute;
-}
-
-#img4:hover {
-    background-color: #e64a19;
-    transform: scale(1.05);
-    animation: bounce 0.5s;
-}
-
-.img5{
-    position: absolute;
-    left: 1150px;
-    top: 140px;
-
-
-
-}
-
-#img5 {
-    width: 300px;
-    height: 300px; 
-    border-radius: 50%;
-    border: 10px solid white;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    position: absolute;
-}
-
-#img5:hover {
-    background-color: #e64a19;
-    transform: scale(1.05);
-    animation: bounce 0.5s;
-}
-
-
-.circle1{
+.circle1, .circle2, .circle3, .circle4 {
     position: absolute;
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    background-color: gray;
-    top: 900px;
-    left: 1510px;
-
-    
-}
-.circle2{
-    position: absolute;
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    background-color: gray;
-    top: 900px;
-    left: 1540px;
-  
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-.circle3{
-    position: absolute;
-    border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    background-color: white;
-    top: 900px;
-    left: 1570px;
-  
-}
+.circle1 { width: 20px; height: 20px; top: 90%; left: 75%; }
+.circle2 { width: 20px; height: 20px; top: 90%; left: 78%; }
+.circle3 { width: 25px; height: 25px; top: 90%; left: 81%; }
+.circle4 { width: 20px; height: 20px; top: 90%; left: 84%; }
 
-.circle4{
-    position: absolute;
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    background-color: gray;
-    top: 900px;
-    left: 1600px;
-  
+@media (max-width: 768px) {
+    .circle1, .circle2, .circle3, .circle4 {
+        display: none;
+    }
 }
